@@ -1,5 +1,5 @@
 {
-    "name": "lilith/common",
+    "name": "lilith/filesystem",
     "description": "Common interface for HTTP messages",
     "keywords": [],
     "homepage": "https://github.com/panteleyR/common",
