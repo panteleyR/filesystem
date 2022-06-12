@@ -255,13 +255,18 @@ class Filesystem implements FilesystemInterface
         $this->rename($from, $to);
     }
 
-    public function ls(string $path = '.'): Generator
+    public function ls(string $path = '.'): array
     {
+        $dirContent = [];
         $dir = $this->dir($path);
-        $content = $this->scanDir($dir);
+
+        foreach($this->scanDir($dir) as $item) {
+            $dirContent[] = $item;
+        }
+
         $dir->close();
 
-        return $content;
+        return $dirContent;
     }
 
     public function rm(string $path, bool $recursive = false, mixed $context = null): bool
