@@ -1,0 +1,24 @@
+{
+    "name": "lilith/common",
+    "description": "Common interface for HTTP messages",
+    "keywords": [],
+    "homepage": "https://github.com/panteleyR/common",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rost",
+            "homepage": "https://google.com/"
+        }
+    ],
+    "require": {
+        "php": ">=8.0"
+    },
+    "autoload": {
+        "files": [
+            "src/functions/json.php"
+        ],
+        "psr-4": {
+            "Lilith\\Filesystem\\": "src/"
+        }
+    }
+}
