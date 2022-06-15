@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace Lilith\Filesystem;
 
 use Directory;
+use FilesystemIterator;
 use Generator;
+use RecursiveDirectoryIterator;
 
 class Filesystem implements FilesystemInterface
 {
@@ -271,6 +273,14 @@ class Filesystem implements FilesystemInterface
 
     public function rm(string $path, bool $recursive = false, mixed $context = null): bool
     {
+//        $test = new RecursiveDirectoryIterator($path);
+//        if ($test->isDir()) {
+//            foreach ($test as $item) {
+//                $item->
+//            }
+//        } else {
+//            $this->unlink($test->getRealPath());
+//        }
         if ($this->isDir($path)) {
             $dir = $this->dir($path);
 
